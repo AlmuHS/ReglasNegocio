@@ -7,7 +7,7 @@ public class Cliente {
 	private String name;
 	private Date ultimafechaacceso;
 	private float tiemposinacceso;
-	private enum estado {activo,bloqueado};
+	public enum estado {activo,bloqueado};
 	private estado actual;
 	private Boolean plazovencido;
 	

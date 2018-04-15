@@ -6,7 +6,7 @@ public class Proyecto {
 	private int id;
 	private int ultima_actividad;
 	private enum estado {activo, cerrado};
-	private boolean aceptado;
+	public boolean aceptado;
 	private estado actual;
 	private String pais;
 	private String[] paises_ue = {"Alemania", "Austria", "Belgica", "Bulgaria",
