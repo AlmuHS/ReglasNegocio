@@ -5,9 +5,12 @@ public class Proyecto {
 	private int ultima_actividad;
 	private enum estado {activo, cerrado};
 	private estado actual;
+	private String pais;
 	
-	public Proyecto(){
+	public Proyecto(int id, String pais){
 		actual = estado.activo;
+		this.id = id;
+		this.pais = pais;
 	}
 	
 	public int getUltima_actividad() {
@@ -21,11 +24,7 @@ public class Proyecto {
 	public int getId() {
 		return id;
 	}
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-	
+		
 	public estado getActual() {
 		return actual;
 	}
@@ -33,4 +32,9 @@ public class Proyecto {
 	public void setActual(estado actual) {
 		this.actual = actual;
 	}
+
+	public String getPais() {
+		return pais;
+	}
+
 }
