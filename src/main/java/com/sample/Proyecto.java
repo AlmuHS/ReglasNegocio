@@ -19,12 +19,8 @@ public class Proyecto {
 	private boolean pais_ue;
 	
 	
-	public Proyecto(int id, String pais){
+	public Proyecto(){
 		actual = estado.activo;
-		this.id = id;
-		this.pais = pais;
-		
-		pais_ue = Arrays.asList(paises_ue).contains(pais);
 	}
 	
 	public int getUltima_actividad() {
@@ -33,6 +29,10 @@ public class Proyecto {
 	
 	public void setUltima_actividad(int ultima_actividad) {
 		this.ultima_actividad = ultima_actividad;
+	}
+	
+	public void setId(int id){
+		this.id = id;
 	}
 	
 	public int getId() {
@@ -45,6 +45,11 @@ public class Proyecto {
 	
 	public void setActual(estado actual) {
 		this.actual = actual;
+	}
+	
+	public void setPais(String pais){
+		this.pais = pais;
+		pais_ue = Arrays.asList(paises_ue).contains(pais);
 	}
 
 	public String getPais() {
