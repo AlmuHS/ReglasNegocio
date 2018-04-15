@@ -10,16 +10,17 @@ when
 	proyecto: Proyecto(pais_ue == false) from proyecto.is_PaisUE();
 then
 	proyecto.setAceptado(false);
+end
 
 //Caducidad del Cliente
 
 rule "Client Dead"
 	salience 20
 when
-	cliente: Cliente (actual == bloqueado) from cliente.get_actual();
+	cliente: Cliente(actual == bloqueado) from cliente.get_actual();
 then
 	cliente.setPlazovencido(true);
-
+end
 
 //Cierre de Proyectos
 
