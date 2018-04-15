@@ -1,0 +1,14 @@
+import com.sample;
+
+//Procedencia de Proyectos
+
+
+
+//Caducidad del Cliente
+rule "Client Dead"
+
+
+//Cierre de Proyectos
+
+
+
