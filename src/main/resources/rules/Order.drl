@@ -1,0 +1,27 @@
+import com.sample;
+import java.util.Date;
+import java.time;
+import com.sample.Cliente;
+
+//Procedencia de Proyectos
+rule "Project Country"
+	salience 10
+when
+	proyecto: Proyecto(pais_ue == false) from proyecto.is_PaisUE();
+then
+	proyecto.setAceptado(false);
+
+//Caducidad del Cliente
+
+rule "Client Dead"
+	salience 20
+when
+	cliente: Cliente (actual == bloqueado) from cliente.get_actual();
+then
+	cliente.setPlazovencido(true);
+
+
+//Cierre de Proyectos
+
+
+

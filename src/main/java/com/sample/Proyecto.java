@@ -1,5 +1,7 @@
 package com.sample;
 
+import java.util.Arrays;
+
 public class Proyecto {
 	private int id;
 	private int ultima_actividad;
@@ -7,11 +9,22 @@ public class Proyecto {
 	private boolean aceptado;
 	private estado actual;
 	private String pais;
+	private String[] paises_ue = {"Alemania", "Austria", "Belgica", "Bulgaria",
+								"Chipre", "Croacia", "Dinamarca", "Eslovaquia",
+								"Eslovenia", "España", "Estonia", "Finlandia",
+								"Francia", "Grecia", "Hungría", "Irlanda",
+								"Italia", "Letonia", "Lituania", "Luxemburgo",
+								"Malta", "Paises Bajos", "Polonia", "Portugal",
+								"Reino Unido", "República Checa", "Rumanía","Suecia"};
+	private boolean pais_ue;
+	
 	
 	public Proyecto(int id, String pais){
 		actual = estado.activo;
 		this.id = id;
 		this.pais = pais;
+		
+		pais_ue = Arrays.asList(paises_ue).contains(pais);
 	}
 	
 	public int getUltima_actividad() {
@@ -44,6 +57,10 @@ public class Proyecto {
 
 	public void setAceptado(boolean aceptado) {
 		this.aceptado = aceptado;
+	}
+
+	public boolean isPais_ue() {
+		return pais_ue;
 	}
 
 }
