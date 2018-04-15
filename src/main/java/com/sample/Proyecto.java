@@ -4,6 +4,7 @@ public class Proyecto {
 	private int id;
 	private int ultima_actividad;
 	private enum estado {activo, cerrado};
+	private boolean aceptado;
 	private estado actual;
 	private String pais;
 	
@@ -35,6 +36,14 @@ public class Proyecto {
 
 	public String getPais() {
 		return pais;
+	}
+
+	public boolean isAceptado() {
+		return aceptado;
+	}
+
+	public void setAceptado(boolean aceptado) {
+		this.aceptado = aceptado;
 	}
 
 }
