@@ -1,4 +1,7 @@
 import com.sample;
+import java.util.Date;
+import java.time;
+import com.sample.Cliente;
 
 //Procedencia de Proyectos
 
@@ -6,6 +9,11 @@ import com.sample;
 
 //Caducidad del Cliente
 rule "Client Dead"
+
+when
+cliente: Cliente (actual == Cliente estado.bloqueado) from cliente.get_actual();
+then
+System.out.printl("Cliente bloqeuado");
 
 
 //Cierre de Proyectos

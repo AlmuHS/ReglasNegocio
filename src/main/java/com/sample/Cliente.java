@@ -1,11 +1,15 @@
 package com.sample;
-import java.util.Date;
+import java.util.Date;;
 
 public class Cliente {
 	
 	private int id;
 	private String name;
 	private Date ultimafechaacceso;
+	private float tiemposinacceso;
+	private enum estado {activo,bloqueado};
+	private estado actual;
+	
 	
 	public int get_id()
 	{
@@ -37,5 +41,40 @@ public class Cliente {
 		this.ultimafechaacceso=fecha;
 	}
 	
+	void calculatsa(Date ufa, float tsa)
+	{
+		ufa=this.ultimafechaacceso;
+		Date fechanow = new Date();
+		float diferenciaEn_ms = fechanow.getTime() - ufa.getTime();
+		tsa = diferenciaEn_ms / (1000 * 60 * 60 * 24* 30* 12);
+		this.tiemposinacceso=tsa;
+		if(tsa>2)
+		{
+			this.actual=estado.bloqueado;
+		}
+	}
+	
+	public float get_tsa()
+	{
+		return tiemposinacceso;
+	}
+	
+	public estado get_actual()
+	{
+		return actual;
+	}
+	
+	public void set_actual(estado actual)
+	{
+		this.actual=actual;
+	}
+	
+	public Cliente(int id, String name, estado actual)
+	{
+		super();
+		this.id=id;
+		this.name=name;
+		this.actual=actual;
+	}
 }
 
