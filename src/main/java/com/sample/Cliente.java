@@ -77,5 +77,13 @@ public class Cliente {
 		this.name=name;
 		this.actual=actual;
 	}
+
+	public Boolean getPlazovencido() {
+		return plazovencido;
+	}
+
+	public void setPlazovencido(Boolean plazovencido) {
+		this.plazovencido = plazovencido;
+	}
 }
 
