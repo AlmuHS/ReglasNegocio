@@ -13,7 +13,7 @@ rule "Client Dead"
 when
 cliente: Cliente (actual == Cliente estado.bloqueado) from cliente.get_actual();
 then
-System.out.printl("Cliente bloqueado");
+cliente.plazovencido=true;
 
 
 //Cierre de Proyectos

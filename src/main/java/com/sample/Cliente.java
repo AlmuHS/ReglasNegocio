@@ -9,6 +9,7 @@ public class Cliente {
 	private float tiemposinacceso;
 	private enum estado {activo,bloqueado};
 	private estado actual;
+	private Boolean plazovencido;
 	
 	
 	public int get_id()
