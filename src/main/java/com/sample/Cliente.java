@@ -42,7 +42,7 @@ public class Cliente {
 		this.ultimafechaacceso=fecha;
 	}
 	
-	void calculatsa(Date ufa, float tsa)
+	public Boolean calculatsa(Date ufa, float tsa)
 	{
 		ufa=this.ultimafechaacceso;
 		Date fechanow = new Date();
@@ -52,7 +52,9 @@ public class Cliente {
 		if(tsa>2)
 		{
 			this.actual=estado.bloqueado;
+			return true;
 		}
+		else return false;
 	}
 	
 	public float get_tsa()

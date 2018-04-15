@@ -19,7 +19,8 @@ end
 rule "Client Dead"
 	salience 20
 when
-	cliente: Cliente(get_actual() == estado.bloqueado) from cliente.get_actual();
+	cliente: Cliente()
+	plazo: Boolean() from cliente.calculatsa();
 then
 	cliente.setPlazovencido(true);
 end
