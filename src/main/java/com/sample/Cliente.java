@@ -10,6 +10,7 @@ public class Cliente {
 	public enum estado {activo,bloqueado};
 	private estado actual;
 	private Boolean plazovencido;
+	private Boolean info;
 	
 	
 	public int get_id()
@@ -42,7 +43,7 @@ public class Cliente {
 		this.ultimafechaacceso=fecha;
 	}
 	
-	public Boolean calculatsa(Date ufa, float tsa)
+	public void calculatsa(Date ufa, float tsa)
 	{
 		ufa=this.ultimafechaacceso;
 		Date fechanow = new Date();
@@ -52,9 +53,9 @@ public class Cliente {
 		if(tsa>2)
 		{
 			this.actual=estado.bloqueado;
-			return true;
+			set_info(true);
 		}
-		else return false;
+		else set_info(false);
 	}
 	
 	public float get_tsa()
@@ -86,6 +87,16 @@ public class Cliente {
 
 	public void setPlazovencido(Boolean plazovencido) {
 		this.plazovencido = plazovencido;
+	}
+	
+	public Boolean get_info()
+	{
+		return this.info;
+	}
+	
+	public void set_info(Boolean info)
+	{
+		this.info=info;
 	}
 }
 
