@@ -20,7 +20,7 @@ rule "Client Dead"
 	salience 20
 when
 	cliente: Cliente()
-	plazo: Boolean() from cliente.get_info() == true;
+	plazo: boolean() from cliente.get_info();
 then
 	cliente.setPlazovencido(true);
 end

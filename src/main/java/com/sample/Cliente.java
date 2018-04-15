@@ -9,8 +9,8 @@ public class Cliente {
 	private float tiemposinacceso;
 	public enum estado {activo,bloqueado};
 	private estado actual;
-	private Boolean plazovencido;
-	private Boolean info;
+	private boolean plazovencido;
+	private boolean info;
 	
 	
 	public int get_id()
@@ -81,7 +81,7 @@ public class Cliente {
 		this.actual=actual;
 	}
 
-	public Boolean getPlazovencido() {
+	public boolean getPlazovencido() {
 		return plazovencido;
 	}
 
@@ -89,7 +89,7 @@ public class Cliente {
 		this.plazovencido = plazovencido;
 	}
 	
-	public Boolean get_info()
+	public boolean get_info()
 	{
 		return this.info;
 	}
